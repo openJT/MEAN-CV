@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<base href="/">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/cv/css/animate.css">
+    <link rel="stylesheet" href="/cv/css/animation.css">
+    <link rel="stylesheet" href="/cv/css/app.css">
+    <link rel="stylesheet" href="/cv/css/ie.css">
+    <link rel="stylesheet" href="/cv/bower_components/angular-material/angular-material.css">
+    <!-- endinject -->
+
+</head>
+<body>
+<div ng-app="app"  layout="column" style="height: 100vh;overflow: hidden" >
+    <div id="login" ui-view></div>
+    <div ngsf-fullscreen="full">
+        <div id="sidenav" ui-view="sidenav"></div>
+        <div  ui-view="header" ></div>
+        <div id="main" ui-view="main" class="container" style="overflow: hidden" ></div>
+    </div>
+
+</div>
+<!-- inject:js -->
+<script src="/cv/bower_components/angular/angular.js"></script>
+<script src="/cv/bower_components/angular-animate/angular-animate.js"></script>
+<script src="/cv/bower_components/angular-aria/angular-aria.js"></script>
+<script src="/cv/bower_components/angular-resource/angular-resource.js"></script>
+<script src="/cv/bower_components/screenfull/dist/screenfull.js"></script>
+<script src="/cv/bower_components/angular-touch/angular-touch.js"></script>
+<script src="/cv/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="/cv/bower_components/hammerjs/hammer.js"></script>
+<script src="/cv/js/services/auth.service.js"></script>
+<script src="/cv/js/services/user.service.js"></script>
+<script src="/cv/js/services/rest.service.js"></script>
+<script src="/cv/js/directives/show.hide.directive.js"></script>
+<script src="/cv/js/lib/FileSaver.js"></script>
+<script src="/cv/js/app.js"></script>
+<script src="/cv/js/controller/main.controller.js"></script>
+<script src="/cv/js/controller/login.controller.js"></script>
+<script src="/cv/js/controller/dialog.controller.js"></script>
+<script src="/cv/bower_components/angular-material/angular-material.js"></script>
+<script src="/cv/bower_components/angular-screenfull/dist/angular-screenfull.js"></script>
+<!-- endinject -->
+
+</body>
+</html>

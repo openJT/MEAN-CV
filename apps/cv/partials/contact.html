@@ -1,0 +1,32 @@
+<div layout="row" layout-align="center center" class="mainHeight" style="overflow: hidden" flex>
+    <div layout="row"  class="md-whiteframe-z3 mainHeight" style="background-color:#EDEDED;" flex>
+
+        <div layout="column" flex flex-sm="20">
+            <img class="contactIcons" src="/images/icons/ic_account_box_black_24px.svg" ng-click="showDialog($event)" alt="sorry no pic for you!" style="margin:auto;cursor: pointer;outline:none"/>
+            <md-divider></md-divider>
+            <img class="contactIcons" src="/images/icons/github.svg" alt="sorry no pic for you!" style="margin:auto"/>
+            <md-divider></md-divider>
+            <img class="contactIcons" ng-click="getcv()" style="cursor: pointer;outline:none;margin:auto" src="/images/icons/ic_get_app_black_24px.svg" alt="sorry no pic for you!"/>
+            <md-divider></md-divider>
+            <img class="contactIcons" src="/images/icons/ic_local_post_office_black_24px.svg" alt="sorry no pic for you!" style="margin:auto"/>
+            <md-divider></md-divider>
+        </div>
+        <md-divider></md-divider>
+        <div layout="column" flex>
+            <div class="contactText">
+                <div style="cursor: pointer;outline:none" ng-click="showDialog($event)">
+                    {{info.name}}
+                </div>
+            </div>
+            <md-divider></md-divider>
+            <div class="contactText"><a href="https://github.com/openJT">{{info.github}}</a></div>
+            <md-divider></md-divider>
+            <div class="contactText" layout="row" ng-click="getcv()" style="cursor: pointer;outline:none">CV PDF</div>
+            <md-divider></md-divider>
+            <div class="contactText"><a href="mailto:{{info.email}}" target="_top">{{info.email}}</a></div>
+            <md-divider></md-divider>
+        </div>
+    </div>
+</div>
+
+

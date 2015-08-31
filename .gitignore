@@ -1,0 +1,4 @@
+node_modules
+apps/cv/bower_components
+build
+.idea/

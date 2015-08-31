@@ -1,0 +1,23 @@
+<md-sidenav  style="margin-right:5px;background-color: #C8C8C8" class="md-sidenav-left md-whiteframe-z2"
+            md-component-id="left">
+    <div>
+        <div layout="column" layout-align="center center" >
+            <md-toolbar style="cursor: pointer;padding: 20px;outline:none;background-color: #474747" >
+                <img style="cursor: pointer;outline:none"
+                      ng-click="toggle()" src="/images/icons/ic_clear_white_24px.svg">
+            </md-toolbar>
+        </div>
+    </div>
+
+    <div ng-click="toggle()" style="cursor: pointer;font-weight: 600;outline:none;margin: 30px" layout="column" layout-align="space-around">
+        <md-divider></md-divider>
+        <div ui-sref-active="selected" class="sidenavItem" ui-sref="main.skills" flex>Skills</div>
+        <md-divider></md-divider>
+        <div ui-sref-active="selected" class="sidenavItem" ui-sref="main.about" flex>About</div>
+        <md-divider></md-divider>
+        <div ui-sref-active="selected" class="sidenavItem" ui-sref="main.experience" flex>Experience</div>
+        <md-divider></md-divider>
+        <div ui-sref-active="selected" class="sidenavItem" ui-sref="main.contact" flex>Contact</div>
+        <md-divider></md-divider>
+    </div>
+</md-sidenav>

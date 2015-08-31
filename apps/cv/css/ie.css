@@ -1,0 +1,27 @@
+.selectedIe {
+    background-color: rgba(227, 227, 227, 0.8);
+    border-radius: 10px;
+}
+
+.menuitemIe {
+    cursor: pointer;
+    margin: 1.75em auto 1em auto;
+    text-align: center;
+    font-size: 1.25em;
+}
+
+.menuitemIe:hover {
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+    background-color: rgba(227, 227, 227, 0.8);
+    border-radius: 10px;
+}
+
+.ie9 img[src*=".svg"] {
+    width: 100%;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    img[src*=".svg"] {
+        width: 100%;
+    }
+}

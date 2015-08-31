@@ -1,0 +1,52 @@
+<div layout="row" layout-align="center center" ng-show="!ie" style="overflow: hidden">
+    <div layout="column" flex-sm="100" flex-md="100" flex-gt-md="80" class="md-whiteframe-z3 mainHeight" style="background-color:#EDEDED;overflow: auto">
+        <div style="margin: 20px"></div>
+        <div ng-repeat="job in jobs | orderBy: '-order':true">
+            <div style="margin:30px" layout="column" flex>
+                <div layout="column" flex>
+                    <div layout="row" layout-align="space-between" style="margin-left: 20px" flex>
+                        <div>
+                            <div style="font-weight: 700;font-size: 150%">{{job.position}}</div>
+                            <div style="font-weight: 700">{{job.company}}</div>
+                            <div style="font-weight: 600">{{job.fromto}}</div>
+                        </div>
+                        <div><img ng-src="{{job.logo}}" alt="" class="jobIcon"/></div>
+                    </div>
+                    <show-hide>
+                        <div layout="column" ng-repeat="skill in job.skills track by $index" style="margin: auto auto auto 30px;font-weight: 500">
+                            <div style="font-weight: 600" flex>- {{skill}}</div>
+                        </div>
+                    </show-hide>
+                    <md-divider style="margin-top: 20px" flex></md-divider>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="background-color:#EDEDED;height: 100%;overflow: hidden" ng-show="ie">
+    <div class="mainHeight" style="overflow: auto">
+        <div ng-repeat="job in jobs track by $index">
+            <div style="margin:30px" layout="column">
+                <div layout="column">
+                    <div layout="row" layout-align="space-between" style="margin-left: 20px">
+                        <div>
+                            <div style="font-weight: 700;font-size: 150%">{{job.position}}</div>
+                            <div style="font-weight: 700">{{job.company}}</div>
+                            <div style="font-weight: 600">{{job.fromto}}</div>
+                        </div>
+                        <div><img ng-src="{{job.logo}}" alt="" style="max-width: 100px"/></div>
+                    </div>
+                    <show-hide>
+                        <div layout="column" ng-repeat="skill in job.skills track by $index" style="margin: auto auto auto 30px;font-weight: 500">
+                            <div style="font-weight: 600">- {{skill}}</div>
+                        </div>
+                    </show-hide>
+                    <md-divider style="margin-top: 20px"></md-divider>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

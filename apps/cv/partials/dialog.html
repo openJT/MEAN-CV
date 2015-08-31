@@ -1,0 +1,35 @@
+<md-dialog flex-sm="100" flex-md="80" flex-lg="80" flex-gt-lg="40">
+    <md-content>
+        <div layout="column" class="dialog">
+            <div class="md-whiteframe-z5" layout="row"
+                 style="padding:20px;background-color: #464646;">
+                <div style="margin: auto;font-weight: 700;color: whitesmoke">{{info.name}}</div>
+            </div>
+
+            <div layout="row" style="margin: 20px">
+                <img flex="30" src="/images/icons/ic_my_location_black_24px.svg" alt=""/>
+
+                <div flex>
+                    <div>{{info.address1}}</div>
+                    <div>{{info.address2}}</div>
+                    <div>{{info.address3}}</div>
+                </div>
+            </div>
+            <md-divider></md-divider>
+            <div layout="row" style="margin: 20px">
+                <img flex="30" src="/images/icons/ic_call_black_24px.svg" alt=""/>
+
+                <div flex>
+                    <div style="margin: 10px 0 10px 0"><a href="tel:{{info.phone}}">Home: {{info.phone}}</a></div>
+                    <div style="margin: 10px 0 10px 0"><a href="tel:{{info.cell}}">Cell: {{info.cell}}</a></div>
+                </div>
+            </div>
+
+            <md-divider></md-divider>
+
+            <div layout="row" layout-align="end end">
+                <md-button ng-click="cancel()">Ok</md-button>
+            </div>
+        </div>
+    </md-content>
+</md-dialog>
