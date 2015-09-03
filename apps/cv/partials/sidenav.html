@@ -9,15 +9,15 @@
         </div>
     </div>
 
-    <div ng-click="toggle()" style="cursor: pointer;font-weight: 600;outline:none;margin: 30px" layout="column" layout-align="space-around">
+    <div style="cursor: pointer;font-weight: 600;outline:none;margin: 30px" layout="column" layout-align="space-around">
         <md-divider></md-divider>
-        <div ui-sref-active="selected" class="sidenavItem" ui-sref="main.skills" flex>Skills</div>
+        <div ng-click="toggle()"  ui-sref-active="selected" class="sidenavItem" ui-sref="main.skills" flex>Skills</div>
         <md-divider></md-divider>
-        <div ui-sref-active="selected" class="sidenavItem" ui-sref="main.about" flex>About</div>
+        <div ng-click="toggle()"  ui-sref-active="selected" class="sidenavItem" ui-sref="main.about" flex>About</div>
         <md-divider></md-divider>
-        <div ui-sref-active="selected" class="sidenavItem" ui-sref="main.experience" flex>Experience</div>
+        <div ng-click="toggle()"  ui-sref-active="selected" class="sidenavItem" ui-sref="main.experience" flex>Experience</div>
         <md-divider></md-divider>
-        <div ui-sref-active="selected" class="sidenavItem" ui-sref="main.contact" flex>Contact</div>
+        <div ng-click="toggle()"  ui-sref-active="selected" class="sidenavItem" ui-sref="main.contact" flex>Contact</div>
         <md-divider></md-divider>
     </div>
 </md-sidenav>
