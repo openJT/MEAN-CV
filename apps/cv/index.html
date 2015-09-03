@@ -15,14 +15,11 @@
 
 </head>
 <body>
-<div ng-app="app"  layout="column" style="height: 100vh;overflow: hidden" >
+<div ng-app="app" layout="column" style="height: 100vh;overflow: hidden">
     <div id="login" ui-view></div>
-    <div ngsf-fullscreen="full">
-        <div id="sidenav" ui-view="sidenav"></div>
-        <div  ui-view="header" ></div>
-        <div id="main" ui-view="main" class="container" style="overflow: hidden" ></div>
-    </div>
-
+    <div id="sidenav" ui-view="sidenav"></div>
+    <div ui-view="header"></div>
+    <div id="main" ui-view="main" class="container" style="overflow: hidden"></div>
 </div>
 <!-- inject:js -->
 <script src="/cv/bower_components/angular/angular.js"></script>
