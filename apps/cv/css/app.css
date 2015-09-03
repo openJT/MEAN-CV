@@ -23,6 +23,7 @@ html body {
 
 .sidenavItem {
     cursor: pointer;
+    outline:none;
     margin: 14px;
     color: #474747;
     text-align: center;
