@@ -6,13 +6,12 @@
         <div ui-sref-active="selected" class="menuitem" ui-sref="main.about"  flex>About</div>
         <div ui-sref-active="selected" class="menuitem" ui-sref="main.experience"  flex>Experience</div>
         <div ui-sref-active="selected" class="menuitem" ui-sref="main.contact"  flex>Contact</div>
+        <img ng-click="logout()" src="/images/icons/ic_exit_to_app_white_24px.svg" alt="sorry no pic for you!" class="logoutIcon"/>
     </div>
-
-
 </md-toolbar>
+
 <md-toolbar hide-gt-lg layout="row" ng-show="!ie" class="animated fadeInDown headerHeight" style="background-color: #474747;outline:none">
     <div ui-sref="main" ng-click="toggle()" style="margin:auto auto auto 30px;cursor: pointer;font-size: 175%;font-weight: 800;outline:none" flex>J D</div>
-
 </md-toolbar>
 
 <md-toolbar hide-sm hide-md hide-lg layout="row" ng-show="ie" class="animated fadeInDown" style="background-color: #474747;outline:none">
@@ -23,10 +22,10 @@
         <div ui-sref-active="selected" class="menuitemIe" ui-sref="main.about"  flex>About</div>
         <div ui-sref-active="selected" class="menuitemIe" ui-sref="main.experience"  flex>Experience</div>
         <div ui-sref-active="selected" class="menuitemIe" ui-sref="main.contact"  flex>Contact</div>
+        <img ng-click="logout()" src="/images/icons/ic_exit_to_app_white_24px.svg" alt="sorry no pic for you!" class="logoutIcon"/>
     </div>
-
-
 </md-toolbar>
+
 <md-toolbar hide-gt-lg layout="row" ng-show="ie" class="animated fadeInDown" ng-click="toggle()" style="background-color: #474747;height:10vh;outline:none">
     <div  ui-sref="main"  style="margin:20px;cursor: pointer;font-size: 175%;font-weight: 800" flex>J D</div>
 

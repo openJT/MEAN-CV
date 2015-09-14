@@ -1,5 +1,5 @@
 angular.module("app")
-    .controller('mainCtrl', function ($scope, $mdSidenav, rest, $mdDialog) {
+    .controller('mainCtrl', function ($scope, $mdSidenav, rest, $mdDialog, Auth) {
         $scope.jobs = rest.getjobs();
         $scope.info = rest.getInfo();
         $scope.ie=false;
@@ -30,6 +30,9 @@ angular.module("app")
                 .then(function(answer) {
                 }, function() {
                 });
+        };
+        $scope.logout = function(){
+            Auth.logout();
         };
 
     });

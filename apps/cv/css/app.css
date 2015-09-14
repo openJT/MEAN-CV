@@ -60,7 +60,11 @@ html body {
 .contactIcons {
     height: 50px;
 }
-
+.logoutIcon{
+    height: 50px;
+    outline: none;
+    cursor: pointer;
+}
 .dialog {
     font-size: 1.25em;
 }
