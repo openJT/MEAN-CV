@@ -10,8 +10,7 @@ angular.module('app')
                     password: $scope.user.password
                 }).then(function () {
                     $state.go('main');
-                })
-                    .catch(function (err) {
+                }).catch(function (err) {
                         $scope.errors.other = err.message;
                     });
             }

@@ -1,12 +1,7 @@
 angular.module("app")
     .controller('mainCtrl', function ($scope, $mdSidenav, rest, $mdDialog, Auth) {
         $scope.ie=false;
-        $scope.full = false;
-         if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true ))$scope.ie=true;
-
-        $scope.toggleFullScreen = function(){
-            $scope.full = !$scope.full;
-        };
+        if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true ))$scope.ie=true;
 
         var prom = rest.getjobs();
         prom.then(function(data){
