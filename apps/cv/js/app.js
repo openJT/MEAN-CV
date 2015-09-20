@@ -1,8 +1,9 @@
-angular.module("app", ['ui.router', 'ngAnimate', 'ngResource',  'ngMaterial', 'ngAria', 'my.directives', 'my.services', 'ngTouch'])
-    .config(function ($stateProvider, $locationProvider, $httpProvider) {
+angular.module("app", ['ui.router', 'ngAnimate', 'ngResource', 'ngMaterial', 'ngAria', 'my.directives', 'my.services', 'ngTouch'])
+    .config(function ($stateProvider, $locationProvider, $httpProvider, $urlRouterProvider) {
         $stateProvider
             .state('login', {
                 url: '/',
+                authenticate: false,
                 views: {
                     "": {
                         templateUrl: 'cv/partials/login.html',
@@ -11,7 +12,8 @@ angular.module("app", ['ui.router', 'ngAnimate', 'ngResource',  'ngMaterial', 'n
                 }
             })
             .state('main', {
-                url: '',
+                url: '/cv/',
+                authenticate: true,
                 views: {
                     "header@": {
                         templateUrl: 'cv/partials/header.html',
@@ -28,7 +30,8 @@ angular.module("app", ['ui.router', 'ngAnimate', 'ngResource',  'ngMaterial', 'n
                 }
             })
             .state('main.skills', {
-                url: '',
+                url: 'skills',
+                authenticate: true,
                 views: {
                     "main@": {
                         templateUrl: 'cv/partials/skills.html',
@@ -37,7 +40,8 @@ angular.module("app", ['ui.router', 'ngAnimate', 'ngResource',  'ngMaterial', 'n
                 }
             })
             .state('main.experience', {
-                url: '',
+                url: 'experience',
+                authenticate: true,
                 views: {
                     "main@": {
                         templateUrl: 'cv/partials/experience.html',
@@ -46,7 +50,8 @@ angular.module("app", ['ui.router', 'ngAnimate', 'ngResource',  'ngMaterial', 'n
                 }
             })
             .state('main.about', {
-                url: '',
+                url: 'about',
+                authenticate: true,
                 views: {
                     "main@": {
                         templateUrl: 'cv/partials/about.html',
@@ -55,7 +60,8 @@ angular.module("app", ['ui.router', 'ngAnimate', 'ngResource',  'ngMaterial', 'n
                 }
             })
             .state('main.contact', {
-                url: '',
+                url: 'contact',
+                authenticate: true,
                 views: {
                     "main@": {
                         templateUrl: 'cv/partials/contact.html',
@@ -63,9 +69,10 @@ angular.module("app", ['ui.router', 'ngAnimate', 'ngResource',  'ngMaterial', 'n
                     }
                 }
             });
+        $urlRouterProvider.otherwise('/');
         $locationProvider.html5Mode(true);
         $httpProvider.interceptors.push('authInterceptor');
-    })    .factory('authInterceptor', function ($rootScope, $q, $location) {
+    }).factory('authInterceptor', function ($rootScope, $q, $location) {
         return {
             // Add authorization token to headers
             request: function (config) {
@@ -88,4 +95,13 @@ angular.module("app", ['ui.router', 'ngAnimate', 'ngResource',  'ngMaterial', 'n
                 }
             }
         };
+    })
+    .run(function ($rootScope, Auth, $timeout, $state) {
+            if (toState.authenticate) {
+                if (!Auth.isLoggedIn()) {
+                    // If token invalid or undefined, server redirects to login.
+                    Auth.getUserInfo();
+                }
+            }
+        });
     });
