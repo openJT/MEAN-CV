@@ -15,15 +15,15 @@
         <div layout="column" flex>
             <div class="contactText">
                 <div style="cursor: pointer;outline:none" ng-click="showDialog($event)">
-                    {{info.name}}
+                    {{::info.name}}
                 </div>
             </div>
             <md-divider></md-divider>
-            <div class="contactText"><a href="https://github.com/openJT">{{info.github}}</a></div>
+            <div class="contactText"><a href="https://github.com/openJT">{{::info.github}}</a></div>
             <md-divider></md-divider>
             <div class="contactText" layout="row" ng-click="getcv()" style="cursor: pointer;outline:none">CV PDF</div>
             <md-divider></md-divider>
-            <div class="contactText"><a href="mailto:{{info.email}}" target="_top">{{info.email}}</a></div>
+            <div class="contactText"><a href="mailto:{{info.email}}" target="_top">{{::info.email}}</a></div>
             <md-divider></md-divider>
         </div>
     </div>

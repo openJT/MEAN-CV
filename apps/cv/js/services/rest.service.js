@@ -1,20 +1,23 @@
 'use strict';
 angular.module('my.services')
+    .factory('rest', function ($timeout, $rootScope, $state, $http, $q) {
         var jobs = [];
         var info = [];
+        var deferredJobs = $q.defer();
+        var deferredInfo = $q.defer();
         $http({url: '/jobs', method: 'GET'})
             .success(function (data) {
-                jobs = data;
+                deferredJobs.resolve(data);
             })
             .error(function (data, status, headers, config) {
-
+                deferredJobs.reject();
             });
         $http({url: '/info', method: 'GET'})
             .success(function (data) {
-                info = data[0];
+                deferredInfo.resolve(data[0]);
             })
             .error(function (data, status, headers, config) {
-
+                deferredInfo.reject();
             });
         return {
             getcv: function () {
@@ -27,10 +30,10 @@ angular.module('my.services')
                     });
             },
             getjobs: function () {
-                return jobs;
+                return deferredJobs.promise;
             },
             getInfo: function () {
-                return info;
+                return deferredInfo.promise;
             }
 
         }
