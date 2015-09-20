@@ -1,15 +1,5 @@
 'use strict';
 angular.module('my.services')
-    .factory('rest', function ($timeout, $rootScope, $state, $http) {
-        var cnt = 0;
-        var prom = $timeout(function () {
-            ++cnt;
-            $state.go('main.skills')
-        }, 2000);
-        $rootScope.$on('$stateChangeStart', function () {
-            if (cnt === 0)$timeout.cancel(prom);
-            ++cnt;
-        });
         var jobs = [];
         var info = [];
         $http({url: '/jobs', method: 'GET'})

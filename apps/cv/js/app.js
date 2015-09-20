@@ -97,6 +97,14 @@ angular.module("app", ['ui.router', 'ngAnimate', 'ngResource', 'ngMaterial', 'ng
         };
     })
     .run(function ($rootScope, Auth, $timeout, $state) {
+        var prom;
+
+        $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+            if (fromState.name === 'login') {
+                    prom = $timeout(function () {
+                        $state.go('main.skills')
+                    }, 1500);
+            }
             if (toState.authenticate) {
                 if (!Auth.isLoggedIn()) {
                     // If token invalid or undefined, server redirects to login.
