@@ -3,13 +3,13 @@
     <div>
         <div layout="column" layout-align="center center" >
             <md-toolbar style="cursor: pointer;padding: 20px;outline:none;background-color: #474747" >
-                <img style="cursor: pointer;outline:none"
+                <img style="cursor: pointer;outline:none;height: 24px"
                       ng-click="toggle()" src="/images/icons/ic_clear_white_24px.svg">
             </md-toolbar>
         </div>
     </div>
 
-    <div style="cursor: pointer;font-weight: 600;outline:none;margin: 30px" layout="column" layout-align="space-around">
+    <div ng-show="!ie"  style="cursor: pointer;font-weight: 600;outline:none;margin: 30px" layout="column" layout-align="space-around">
         <md-divider></md-divider>
         <div ng-click="toggle()"  ui-sref-active="selected" class="sidenavItem" ui-sref="main.skills" flex>Skills</div>
         <md-divider></md-divider>
@@ -21,5 +21,12 @@
         <md-divider></md-divider>
         <img ng-click="logout()" src="/images/icons/ic_exit_to_app_black_24px.svg" alt="sorry no pic for you!" class="logoutIcon"/>
         <md-divider></md-divider>
+    </div>
+    <div ng-show="ie"  style="cursor: pointer;font-weight: 600;outline:none;margin: 30px" layout="column" layout-align="space-around">
+        <div ng-click="toggle()" ui-sref-active="selected" class="sidenavItem" ui-sref="main.skills" flex>Habilet&eacutes</div>
+        <div ng-click="toggle()" ui-sref-active="selected" class="sidenavItem" ui-sref="main.about" flex>Nouveau d&eacutepart</div>
+        <div ng-click="toggle()" ui-sref-active="selected" class="sidenavItem" ui-sref="main.experience" flex>Ancienne vie</div>
+        <div ng-click="toggle()" ui-sref-active="selected" class="sidenavItem" ui-sref="main.contact" flex>Contact</div>
+        <img ng-click="logout()" src="/images/icons/ic_exit_to_app_black_24px.svg" class="sidenavItem" style="height: 24px;padding-right:25px " alt="sorry no pic for you!" class="logoutIcon"/>
     </div>
 </md-sidenav>
