@@ -1,30 +1,35 @@
-<md-toolbar hide-sm hide-md hide-lg layout="row"  class="animated fadeInDown headerHeight" style="background-color: #474747;outline:none" flex>
-    <div ui-sref="main" ng-show="ie" flex="10" style="margin:auto auto auto 30px;cursor: pointer;font-weight: 900" flex>
+<md-toolbar hide-sm hide-md hide-lg layout="row" class="animated fadeInDown" style="background-color: #474747;outline:none">
+    <div ui-sref="main" ng-if="ie" flex="10" style="margin:0 0 0 30px;cursor: pointer;font-weight: 900" flex>
         <h1>J D</h1>
     </div>
-    <div ui-sref="main" ng-show="!ie" flex="10" style="margin:auto auto auto 30px;cursor: pointer;font-weight: 900;font-size: 200%" flex>
+    <div ui-sref="main" ng-if="!ie" flex="10" style="margin:auto 20px;cursor: pointer;font-weight: 900;font-size: 150%" flex>
         J D
     </div>
     <div flex="20"></div>
-    <div layout="row" ng-show="!ie" layout-align="space-around" flex>
+    <div layout="row" ng-show="!ie" layout-align="space-around center" flex>
         <div ui-sref-active="selected" class="menuitem" ui-sref="main.skills" flex>Skills</div>
         <div ui-sref-active="selected" class="menuitem" ui-sref="main.about" flex>About</div>
         <div ui-sref-active="selected" class="menuitem" ui-sref="main.experience" flex>Experience</div>
         <div ui-sref-active="selected" class="menuitem" ui-sref="main.contact" flex>Contact</div>
-        <div  flex="5"><img ng-click="logout()" src="/images/icons/ic_exit_to_app_white_24px.svg" alt="sorry no pic for you!" class="logoutIcon"/></div>
+        <md-button ng-click="logout()" aria-label="Exit app" class="md-icon-button launch">
+            <md-icon md-svg-icon="/images/icons/ic_exit_to_app_white_24px.svg"></md-icon>
+        </md-button>
     </div>
     <div layout="row" ng-show="ie" layout-align="space-around" flex>
         <div ui-sref-active="selected" class="menuitemIe" ui-sref="main.skills" flex>Skills</div>
         <div ui-sref-active="selected" class="menuitemIe" ui-sref="main.about" flex>About</div>
         <div ui-sref-active="selected" class="menuitemIe" ui-sref="main.experience" flex>Experience</div>
         <div ui-sref-active="selected" class="menuitemIe" ui-sref="main.contact" flex>Contact</div>
-        <div  flex="5"><img ng-click="logout()" src="/images/icons/ic_exit_to_app_white_24px.svg" alt="sorry no pic for you!" class="logoutIcon"/></div>
+        <md-button ng-click="logout()" aria-label="Exit app" class="md-icon-button launch">
+            <md-icon md-svg-icon="/images/icons/ic_exit_to_app_white_24px.svg"></md-icon>
+        </md-button>
     </div>
 </md-toolbar>
 
 </md-toolbar>
-<md-toolbar hide-gt-lg layout="row" class="animated fadeInDown headerHeight" style="background-color: #474747;outline:none" >
-    <div  ng-click="toggle()" style="margin:auto auto auto 30px;cursor: pointer;font-size: 175%;font-weight: 800;outline:none" flex>
+<md-toolbar hide-gt-lg layout="row" class="animated fadeInDown" style="background-color: #474747;outline:none">
+    <div ng-click="toggle()" style="margin:auto auto auto 30px;cursor: pointer;font-size: 175%;font-weight: 800;outline:none"
+        flex>
         J D
     </div>
 </md-toolbar>

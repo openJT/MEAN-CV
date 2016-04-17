@@ -23,7 +23,7 @@ html body {
 
 .sidenavItem {
     cursor: pointer;
-    outline:none;
+    outline: none;
     margin: 14px;
     color: #474747;
     text-align: center;
@@ -60,21 +60,13 @@ html body {
 .contactIcons {
     height: 50px;
 }
-.logoutIcon{
-    height: 50px;
-    outline: none;
-    cursor: pointer;
-}
+
 .dialog {
     font-size: 1.25em;
 }
 
 .dialog img {
     height: 60px;
-}
-
-.headerHeight {
-    height: 10vh;
 }
 
 .mainHeight {
@@ -88,13 +80,10 @@ html body {
     justify-content: flex-end;
 }
 
-@media only screen
-and (max-width: 598px)
-and (orientation: landscape) {
+@media only screen and (max-width: 598px) and (orientation: landscape) {
     .mainHeight {
         height: 80vh;
     }
-
     .flexStyle {
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -108,13 +97,10 @@ and (orientation: landscape) {
     }
 }
 
-@media only screen
-and (min-width: 599px)
-and (orientation: landscape) {
+@media only screen and (min-width: 599px) and (orientation: landscape) {
     .mainHeight {
         height: 80vh;
     }
-
     .flexStyle {
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -126,7 +112,6 @@ and (orientation: landscape) {
         -ms-flex: 1;
         flex: 1;
     }
-
     .express {
         display: block;
         font: 2em "Helvetica Neue", "Open Sans", sans-serif;
@@ -134,28 +119,23 @@ and (orientation: landscape) {
         color: #353535;
         margin: 15px;
     }
-
     .iconheight {
         margin: auto;
         height: 35px;
     }
-
     .aboutfont {
         font-size: 1em;
     }
-
     .contactText {
         margin: auto;
         font-size: 1em;
     }
-
     .contactIcons {
         height: 75px
     }
 }
 
-@media only screen
-and (min-width: 599px) {
+@media only screen and (min-width: 599px) {
     .express {
         display: block;
         font: 2em "Helvetica Neue", "Open Sans", sans-serif;
@@ -163,34 +143,26 @@ and (min-width: 599px) {
         color: #353535;
         margin: 15px;
     }
-
     .iconheight {
         margin: auto;
         height: 35px;
     }
-
     .aboutfont {
         font-size: 1em;
     }
-
     .contactText {
         margin: auto;
         font-size: 1em;
     }
-
     .contactIcons {
         height: 75px
     }
 }
 
-@media only screen
-and (min-width: 600px)
-and (max-width: 960px)
-and (orientation: landscape) {
+@media only screen and (min-width: 600px) and (max-width: 960px) and (orientation: landscape) {
     .mainHeight {
         height: 80vh;
     }
-
     .flexStyle {
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -202,25 +174,20 @@ and (orientation: landscape) {
         -ms-flex: 1;
         flex: 1;
     }
-
     .iconheight {
         margin: auto;
         height: 25px;
     }
-
     .contactText {
         margin: auto;
         font-size: 1em;
     }
-
     .contactIcons {
         height: 50px
     }
 }
 
-@media only screen
-and (min-width: 600px)
-and (max-width: 960px) {
+@media only screen and (min-width: 600px) and (max-width: 960px) {
     .express {
         display: block;
         font: 2em "Helvetica Neue", "Open Sans", sans-serif;
@@ -228,41 +195,29 @@ and (max-width: 960px) {
         color: #353535;
         margin: 15px;
     }
-
     .iconheight {
         height: 35px
     }
-
     .aboutfont {
         font-size: 1.25em;
     }
-
     .contactText {
         margin: auto;
         font-size: 1em;
     }
-
     .contactIcons {
         height: 50px
     }
 }
 
-@media only screen
-and (min-width: 961px)
-and (max-width: 1200px) {
-    .headerHeight {
-        height: 10vh;
-    }
-
+@media only screen and (min-width: 961px) and (max-width: 1200px) {
     .mainHeight {
         height: 90vh;
     }
-
     .jobIcon {
         max-width: 200px;
         max-height: 200px;
     }
-
     .express {
         display: block;
         font: 4em "Helvetica Neue", "Open Sans", sans-serif;
@@ -270,57 +225,42 @@ and (max-width: 1200px) {
         color: #353535;
         margin: 15px;
     }
-
     .iconheight {
         height: 75px
     }
-
     .aboutfont {
         font-size: 1.25em;
     }
-
     .contactText {
         margin: auto;
         font-size: 2em;
     }
-
     .contactIcons {
         height: 150px
     }
 }
 
-@media only screen
-and (min-width: 1201px) {
-    .headerHeight {
-        height: 10vh;
-    }
-
+@media only screen and (min-width: 1201px) {
     .mainHeight {
         height: 90vh;
     }
-
     .aboutFontSize {
         font-size: 1.5em;
     }
-
     .jobIcon {
         max-width: 200px;
         max-height: 200px;
     }
-
     .iconheight {
         height: 100px
     }
-
     .contactText {
         margin: auto;
         font-size: 2em;
     }
-
     .contactIcons {
         height: 150px
     }
-
     .express {
         display: block;
         font: 5em "Helvetica Neue", "Open Sans", sans-serif;
@@ -328,10 +268,7 @@ and (min-width: 1201px) {
         color: #353535;
         margin: 15px;
     }
-
     .chip {
         font-size: 1.5em;
     }
 }
-
-
