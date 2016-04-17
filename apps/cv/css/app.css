@@ -48,8 +48,8 @@ html body {
 }
 
 .jobIcon {
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 50px;
+    max-height: 50px;
 }
 
 .contactText {
@@ -81,8 +81,8 @@ html body {
 }
 
 @media only screen and (max-width: 598px) and (orientation: landscape) {
-    .mainHeight {
-        height: 80vh;
+    .respMargin {
+        margin: 0;
     }
     .flexStyle {
         display: -webkit-flex;
@@ -98,8 +98,8 @@ html body {
 }
 
 @media only screen and (min-width: 599px) and (orientation: landscape) {
-    .mainHeight {
-        height: 80vh;
+    .respMargin {
+        margin: 40px;
     }
     .flexStyle {
         display: -webkit-flex;
@@ -160,9 +160,6 @@ html body {
 }
 
 @media only screen and (min-width: 600px) and (max-width: 960px) and (orientation: landscape) {
-    .mainHeight {
-        height: 80vh;
-    }
     .flexStyle {
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -211,12 +208,9 @@ html body {
 }
 
 @media only screen and (min-width: 961px) and (max-width: 1200px) {
-    .mainHeight {
-        height: 90vh;
-    }
     .jobIcon {
-        max-width: 200px;
-        max-height: 200px;
+        max-width: 150px;
+        max-height: 150px;
     }
     .express {
         display: block;
@@ -241,15 +235,12 @@ html body {
 }
 
 @media only screen and (min-width: 1201px) {
-    .mainHeight {
-        height: 90vh;
-    }
     .aboutFontSize {
         font-size: 1.5em;
     }
     .jobIcon {
-        max-width: 200px;
-        max-height: 200px;
+        max-width: 150px;
+        max-height: 150px;
     }
     .iconheight {
         height: 100px

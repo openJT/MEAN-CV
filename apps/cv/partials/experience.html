@@ -1,4 +1,4 @@
-<div layout="row" layout-align="center center" ng-show="!ie" style="overflow: hidden">
+<div layout="row" layout-align="center center" class="respMargin" ng-show="!ie" style="overflow: hidden;height:85vh">
     <div layout="column" flex-sm="100" flex-md="100" flex-gt-md="80" class="md-whiteframe-z3 mainHeight" style="background-color:#EDEDED;overflow: auto">
         <div style="margin: 20px"></div>
         <div ng-repeat="job in ::jobs | orderBy: '-order':true">
@@ -23,7 +23,6 @@
         </div>
     </div>
 </div>
-
 <div style="background-color:#EDEDED;height: 100%;overflow: hidden" ng-show="ie">
     <div class="mainHeight" style="overflow: auto">
         <div ng-repeat="job in ::jobs track by $index">
