@@ -13,8 +13,6 @@ var path = require('path');
 var config = require('./environment');
 var passport = require('passport');
 var favicon = require('serve-favicon');
-var session = require('express-session');
-var mongoStore = require('connect-mongo')(session);
 
 module.exports = function (app) {
     var env = app.get('env');
@@ -29,23 +27,7 @@ module.exports = function (app) {
     }));
     app.use(methodOverride());
     app.use(cookieParser());
-    //Persist sessions with mongoStore
-    app.use(session({
-        cookie : {
-            maxAge: 3600
-        },
-        secret: config.secrets.session,
-        saveUninitialized: true,
-        resave: true,
-        store: new mongoStore({
-            url: config.mongo.uri,
-            collection: 'sessions'
-        }, function(){
-            console.log('db connection open');
-        })
-    }));
     app.use(passport.initialize());
-    app.use(passport.session());
 
     if ('production' === env) {
         app.use(express.static(path.join(config.root, 'apps')));
