@@ -8,7 +8,8 @@ angular.module('my.directives', ['ngAnimate'])
             scope: {},
             template: '<div>' +
             '<div class="showHideFlex">' +
-            ' <img id="showHideSwitch" ng-src="{{path}}" style="height:2em;outline: none" ng-click="toggle()" alt=""/>' +
+            '<img src="/images/icons/ic_keyboard_arrow_down_black_24px.svg" ' +
+            'style="height:2em;outline: none" class="caret" ng-click="toggle()" alt=""/>' +
             '</div>' +
             '<div ng-transclude  class="invisibleList"></div>' +
             '</div>',
@@ -19,21 +20,17 @@ angular.module('my.directives', ['ngAnimate'])
                 }
 
                 var child = element[0].children[1];
-                var img = document.getElementById('showHideSwitch');
+                var img = element[0].children[0].children[0];
 
                 scope.path = '/images/icons/ic_keyboard_arrow_down_black_24px.svg';
                 scope.toggle = function () {
                     if (hasClass(child, 'showList')) {
-                        $animate.removeClass(child, 'showList').then(function () {
-                        });
-
-                        scope.path = '/images/icons/ic_keyboard_arrow_down_black_24px.svg';
+                        $animate.removeClass(child, 'showList');
+                        $animate.removeClass(img, 'rotateCaret');
                     }
                     else {
-                        $animate.addClass(child, 'showList').then(function () {
-
-                        });
-                        scope.path = '/images/icons/ic_keyboard_arrow_up_black_24px.svg';
+                        $animate.addClass(child, 'showList');
+                        $animate.addClass(img, 'rotateCaret');
                     }
 
                 };

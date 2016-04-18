@@ -5,6 +5,20 @@ html body {
     margin: 0;
 }
 
+.caret {
+    height: 1.5em;
+    outline: none;
+    margin-top: 45px;
+    cursor: pointer;
+    transition: all .6s ease-in-out;
+}
+
+.rotateCaret {
+    -ms-transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+
 .invisibleList {
     max-height: 0;
     transition: max-height 1s;
