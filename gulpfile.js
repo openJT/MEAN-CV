@@ -24,7 +24,7 @@ var gulp = require('gulp'),
 gulp.task('default', ['dev']);
 
 gulp.task('prod', function () {
-    runSequence('copyPrivate', 'copyFavicon', 'copyAssets', 'serverCopy', 'templates', 'getLocal', 'ConcatBowerAllInOne', 'injectProd');
+    runSequence('copyPrivate', 'copyFavicon', 'copyAssets', 'serverCopy', 'copyJson', 'templates', 'getLocal', 'ConcatBowerAllInOne', 'injectProd');
 });
 
 gulp.task('devDaemon', function (cb) {
@@ -148,6 +148,11 @@ gulp.task('ConcatBowerAllInOne', function () {
         .pipe(cssmin())
         .pipe(concat('libs.min.css'))
         .pipe(gulp.dest('build/apps/cv'));
+});
+
+gulp.task('copyJson', function () {
+    return gulp.src('package.json')
+        .pipe(gulp.dest('build'));
 });
 
 gulp.task('serverCopy', function () {
