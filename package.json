@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "scripts": {
+    "start": "node server/app.js"
+  },
   "dependencies": {
     "async": "^1.4.2",
     "body-parser": "^1.13.2",
