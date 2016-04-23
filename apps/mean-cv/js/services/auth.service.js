@@ -1,6 +1,6 @@
 'use strict';
 angular.module('my.services', [])
-    .factory('Auth', function Auth($rootScope, $http, User, $q, $location, $state) {
+    .factory('Auth', function Auth($rootScope, $http, User, $q, $location) {
         var currentUser = {};
         return {
             /**
@@ -54,7 +54,10 @@ angular.module('my.services', [])
             logout: function () {
                 window.localStorage.removeItem("token");
                 currentUser = {};
-                $state.go('login');
+                //using window.location here only for my demo site
+                //would otherwise use the $state service
+                //to save a trip to the server              
+                window.location.assign('/');
             }
         };
     });
