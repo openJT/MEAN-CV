@@ -43,18 +43,18 @@ gulp.task('browser-sync', function () {
 });
 
 gulp.task('livereload', function () {
-    gulp.src('apps/cv/index.html')
+    gulp.src('apps/mean-cv/index.html')
         .pipe(wait(1500))
         .pipe(livereload());
 });
 
 gulp.task('watch', function () {
     livereload.listen();
-    gulp.watch(['apps/cv/**/*.*', '!apps/cv/bower.json', '!apps/cv/bower*/**/*.*'], ['livereload']);
+    gulp.watch(['apps/mean-cv/**/*.*', '!apps/mean-cv/bower.json', '!apps/mean-cv/bower*/**/*.*'], ['livereload']);
 
 });
 gulp.task('cssPrefix', function () {
-    return gulp.src('apps/cv/css/*.css')
+    return gulp.src('apps/mean-cv/css/*.css')
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
@@ -63,68 +63,68 @@ gulp.task('cssPrefix', function () {
 });
 gulp.task('injectLocal', function () {
 
-    var target = gulp.src('apps/cv/index.html');
-    var sources = gulp.src('apps/cv/js/**/*.js')
+    var target = gulp.src('apps/mean-cv/index.html');
+    var sources = gulp.src('apps/mean-cv/js/**/*.js')
         .pipe(angularFilesort())
         .pipe(ngAnnotate());
 
-    var sources2 = gulp.src('apps/cv/css/**/*.css');
+    var sources2 = gulp.src('apps/mean-cv/css/**/*.css');
 
     var sources3 = gulp.src(bowerFiles({
-        paths: 'apps/cv/'
+        paths: 'apps/mean-cv/'
     }));
 
     var merged = es.merge(sources, sources2, sources3);
 
     return target.pipe(inject(merged, {ignorePath: '/apps/'}))
-        .pipe(gulp.dest('apps/cv/'));
+        .pipe(gulp.dest('apps/mean-cv/'));
 
 });
 
 gulp.task('bower', function () {
-    return bower({cwd: path.join(__dirname, 'apps/cv')})
+    return bower({cwd: path.join(__dirname, 'apps/mean-cv')})
 });
 
 gulp.task('injectProd', function () {
 
-    return gulp.src('apps/cv/index.html')
+    return gulp.src('apps/mean-cv/index.html')
         .pipe(inject(
-            gulp.src([path.join('build/apps/cv/', '/**/*.js')]), {ignorePath: '/build/apps/'}
+            gulp.src([path.join('build/apps/mean-cv/', '/**/*.js')]), {ignorePath: '/build/apps/'}
         ))
         .pipe(inject(
-            gulp.src([path.join('build/apps/cv/', '/*.css')])
+            gulp.src([path.join('build/apps/mean-cv/', '/*.css')])
                 .pipe(order([
                     "**/*local.css",
                     "**/*.css"
                 ]))
             , {ignorePath: '/build/apps/'}
         ))
-        .pipe(gulp.dest('build/apps/cv/'));
+        .pipe(gulp.dest('build/apps/mean-cv/'));
 
 });
 
 gulp.task('templates', function () {
-    return gulp.src('apps/cv/**/*.html')
-        .pipe(templateCache({module: 'app', root: 'cv'}))
-        .pipe(gulp.dest(path.join('build/apps/cv/', '/partials/')));
+    return gulp.src('apps/mean-cv/**/*.html')
+        .pipe(templateCache({module: 'app', root: 'mean-cv'}))
+        .pipe(gulp.dest(path.join('build/apps/mean-cv/', '/partials/')));
 
 });
 
 gulp.task('getLocal', function () {
-    var stream1 = gulp.src('apps/cv/js/**/*.js')
+    var stream1 = gulp.src('apps/mean-cv/js/**/*.js')
         .pipe(angularFilesort())
         .pipe(ngAnnotate())
         .pipe(concat('local' + '.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('build/apps/cv/'));
-    var stream2 = gulp.src('apps/cv/css/*.css')
+        .pipe(gulp.dest('build/apps/mean-cv/'));
+    var stream2 = gulp.src('apps/mean-cv/css/*.css')
         .pipe(concat('local' + '.css'))
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
         }))
         .pipe(cssmin())
-        .pipe(gulp.dest('build/apps/cv'));
+        .pipe(gulp.dest('build/apps/mean-cv'));
     return merge(stream1, stream2);
 
 });
@@ -133,21 +133,21 @@ gulp.task('ConcatBowerAllInOne', function () {
     var jsFilter = gulpFilter('**/*.js', {restore: true}),
         cssFilter = gulpFilter('**/*.css', {restore: true});
     var stream1 = gulp.src(bowerFiles({
-        paths: 'apps/cv/'
+        paths: 'apps/mean-cv/'
     }))
         .pipe(jsFilter)
         .pipe(uglify({preserveComments: 'some'}))
         .pipe(concat('libs.min.js'))
-        .pipe(gulp.dest('./build/apps/cv/'))
+        .pipe(gulp.dest('./build/apps/mean-cv/'))
         .pipe(jsFilter.restore)
         .pipe(cssFilter);
 
-    var stream2 = gulp.src('apps/cv/css/animate.css');
+    var stream2 = gulp.src('apps/mean-cv/css/animate.css');
 
     return merge(stream1, stream2)
         .pipe(cssmin())
         .pipe(concat('libs.min.css'))
-        .pipe(gulp.dest('build/apps/cv'));
+        .pipe(gulp.dest('build/apps/mean-cv'));
 });
 
 gulp.task('copyJson', function () {

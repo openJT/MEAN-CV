@@ -12,12 +12,9 @@ module.exports = {
   port: process.env.PORT ||
   8080,
 
-  //Domain url!
-  domainUrl: 'http://www.example.com',
-
   // MongoDB connection options
 
   mongo: {
-    uri: 'mongodb://' + process.env.mongo_name + '/cv'
+    uri: 'mongodb://' + process.env.mongo_name + '/mean-cv'
   }
 };

@@ -6,9 +6,9 @@ process.env.mongo_name = process.env.docker_mongo_name || 'localhost';
 module.exports = {
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://' + process.env.mongo_name + '/cv-dev'
+    uri: 'mongodb://' + process.env.mongo_name + '/mean-cv-dev'
   },
-  
-  port: process.env.PORT ||9000,
+
+  port: process.env.PORT || 9000,
 
 };
